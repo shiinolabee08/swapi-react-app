@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, createContext } from 'react';
 import ToggleTheme from './components/ToggleTheme';
+import Main from './components/Main';
 
 export const ThemeContext = createContext();
 
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <>
-      <div className={`theme-${theme} todo-list-app`}>
+      <div className={`theme-${theme} simple-star-wars-characters-list-app`}>
         <ThemeContext.Provider value={providerValue}>
           <ToggleTheme/>
           <div className="container">

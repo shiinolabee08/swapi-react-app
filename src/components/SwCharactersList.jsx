@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SwCharactersListItem from './SwCharactersListItem';
 import PropTypes from 'prop-types';
 
 const SwCharacterList = (props) => {
 
-  const onOpenCharacterDetailsModal = (characterId) => {
+  const [openModal, setOpenSwModal] = useState(false);
+  const [swCharacterModalDetail, setSwCharacterModalDetail] = useState(null);
 
+  const onOpenCharacterDetailsModal = (character) => {
+    setSwCharacterModalDetail(character);
+    setOpenSwModal(true);
   }
 
-  return props.swCharacters.map((swCharacter) => (
+  const onCloseCharacterDetailsModal = () => {
+    setOpenSwModal(false);
+    setSwCharacterModalDetail(null);
+  }
+
+  return props.swCharacters.map((swCharacter, index) => (
     <SwCharactersListItem
-      key={swCharacter.name}
-      swCharacter={swCharacter}
+      key={index}
+      characterId={index+1}
+      character={swCharacter}
       openCharacterDetailsModal={onOpenCharacterDetailsModal}
+      closeCharacterDetailsModal={onCloseCharacterDetailsModal}
     />
   ));
 }

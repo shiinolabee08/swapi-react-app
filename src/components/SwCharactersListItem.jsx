@@ -11,13 +11,13 @@ const SwCharactersListItem = (props) => {
     marginTop: '10px',
   };
 
-  const { id, name } = props.character;
+  const { name } = props.character;
 
   return (
     <>
       <div style={getItemContainerStyle}>
         <label
-          onClick={props.openCharacterDetailsModal.bind(this, id)}>
+          onClick={props.openCharacterDetailsModal.bind(this, props.character)}>
           { name }
         </label>
       </div>
@@ -27,9 +27,9 @@ const SwCharactersListItem = (props) => {
 
 // set prop types for required prop types
 SwCharactersListItem.propTypes = {
-  characterId: PropTypes.number.isRequired,
   character: PropTypes.object.isRequired,
   openCharacterDetailsModal: PropTypes.func.isRequired,
+  closeCharacterDetailsModal: PropTypes.func.isRequired,
 };
 
 export default SwCharactersListItem;
