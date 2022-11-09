@@ -1,38 +1,122 @@
-.App {
+* {
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica", sans-serif;
+  height: 100%;
+}
+
+.simple-star-wars-characters-list-app{
+  padding: 20px;
+  position: relative;
+}
+
+.container{
+  height: 100%;
+  max-width: 991px;
+}
+
+header{
   text-align: center;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
+.simple-star-wars-characters-list-app.theme-light {
+  background-color: #fff;
+}
+
+.simple-star-wars-characters-list-app.theme-dark {
+  background-color: #171717;
+}
+
+.modal {
+  transition: transform .3s ease-out,
+  -webkit-transform .3s ease-out;
+  max-width: 500px;
+  margin: 1.75rem auto;
+  width: auto;
+  margin: 0.5rem;
   pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1072;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+  z-index: 1071;
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal-backdrop.show{
+  opacity: 0.5;
+}
+
+.modal.show{
+  opacity: 1;
+}
+
+.modal-content{
+  position: relative;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.modal-header{
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-body{
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.modal-footer{
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
 }

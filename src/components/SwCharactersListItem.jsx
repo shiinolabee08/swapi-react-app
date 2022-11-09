@@ -9,7 +9,12 @@ const SwCharactersListItem = (props) => {
     border: '1px solid #666666',
     position: 'relative',
     marginTop: '10px',
+    cursor: 'pointer'
   };
+
+  const getLabelStyle = () => {
+    return { cursor: 'pointer', color: '#fff', fontWeight: 'bold' };
+  }
 
   const { name } = props.character;
 
@@ -17,6 +22,7 @@ const SwCharactersListItem = (props) => {
     <>
       <div style={getItemContainerStyle}>
         <label
+          style={getLabelStyle()}
           onClick={props.openCharacterDetailsModal.bind(this, props.character)}>
           { name }
         </label>
@@ -29,7 +35,6 @@ const SwCharactersListItem = (props) => {
 SwCharactersListItem.propTypes = {
   character: PropTypes.object.isRequired,
   openCharacterDetailsModal: PropTypes.func.isRequired,
-  closeCharacterDetailsModal: PropTypes.func.isRequired,
 };
 
 export default SwCharactersListItem;
