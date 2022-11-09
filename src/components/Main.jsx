@@ -18,14 +18,14 @@ function Main() {
   const [swCharacterModalDetails, setSwCharacterModalDetails] = useState({});
 
   const onOpenCharacterDetailsModal = (character) => {
-    console.log('ni sud sa open');
+    // console.log('ni sud sa open');
     setSwCharacterModalDetails(character);
     setOpenSwModal(true);
   }
 
   const onCloseCharacterDetailsModal = () => {
     setOpenSwModal(false);
-    setSwCharacterModalDetails(null);
+    setSwCharacterModalDetails({});
   }
 
   /* const paginateTo = useCallback((pageNo) => {

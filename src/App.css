@@ -61,6 +61,8 @@ header{
   background-color: #000;
   z-index: 1071;
   opacity: 0;
+  display: none;
+  transition: opacity .15s linear;
 }
 
 .modal-backdrop.show{
